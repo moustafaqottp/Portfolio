@@ -70,26 +70,25 @@ backToTop.addEventListener("click", () => {
 
 });
 
-
 // ===========================
-// Scroll Reveal
+// 1. المتغيرات الأساسية (تعريف مرة واحدة فقط)
 // ===========================
-
 const reveals = document.querySelectorAll(".reveal");
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a"); // تم التعريف هنا ولن نكرره
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.querySelector(".nav-links");
 
+// ===========================
+// 2. Scroll Reveal (ظهور العناصر عند النزول)
+// ===========================
 const revealObserver = new IntersectionObserver((entries) => {
-
     entries.forEach((entry) => {
-
         if (entry.isIntersecting) {
-
             entry.target.classList.add("active");
             revealObserver.unobserve(entry.target);
-
         }
-
     });
-
 }, {
     threshold: 0.15
 });
@@ -98,51 +97,32 @@ reveals.forEach((section) => {
     revealObserver.observe(section);
 });
 
-
 // ===========================
-// Active Navbar
+// 3. Active Navbar (تغيير لون الرابط في القائمة)
 // ===========================
-
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-links a");
-
 window.addEventListener("scroll", () => {
-
     let current = "";
 
     sections.forEach((section) => {
-
         const sectionTop = section.offsetTop - 120;
         const sectionHeight = section.offsetHeight;
 
-        if (window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight) {
-
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
             current = section.getAttribute("id");
         }
-
     });
 
     navLinks.forEach((link) => {
-
         link.classList.remove("active");
-
         if (link.getAttribute("href") === "#" + current) {
             link.classList.add("active");
         }
-
     });
 });
 
 // ===========================
-// Mobile Menu
+// 4. Mobile Menu (قائمة الموبايل)
 // ===========================
-
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.querySelector(".nav-links");
-// السطر القادم هو الحل: قمنا بتعريف جميع الروابط داخل القائمة
-const navLinks = document.querySelectorAll(".nav-links a"); 
-
 if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("active");
@@ -160,7 +140,7 @@ if (menuToggle && navMenu) {
     });
 }
 
-// الآن هذا الجزء سيعمل بشكل سليم تماماً دون أخطاء
+// إغلاق قائمة الموبايل عند الضغط على أي رابط
 if (navLinks) {
     navLinks.forEach((link) => {
         link.addEventListener("click", () => {
@@ -173,4 +153,3 @@ if (navLinks) {
         });
     });
 }
-
