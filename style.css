@@ -1,0 +1,1342 @@
+/* ===========================
+   Google Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --primary:#3b82f6;
+    --secondary:#60a5fa;
+
+    --dark:#050816;
+    --dark2:#0f172a;
+    --card:#111827;
+
+    --white:#ffffff;
+    --text:#d1d5db;
+
+    --border:rgba(255,255,255,.08);
+
+    --shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background:#0b1220;
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+section{
+
+    padding:100px 10%;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    font-size:42px;
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.section-title p{
+
+    color:#9ca3af;
+
+    font-size:18px;
+
+}
+
+html::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+html::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+html::-webkit-scrollbar-track{
+
+    background:#0b1120;
+
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    max-width:1300px;
+
+    padding:18px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(17,24,39,.55);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--border);
+
+    border-radius:60px;
+
+    z-index:1000;
+
+    box-shadow:var(--shadow);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:white;
+
+}
+
+.logo i{
+
+    color:var(--primary);
+
+    font-size:28px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    color:#d1d5db;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary);
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.nav-links a.active{
+    color: var(--primary);
+}
+
+.nav-links a.active::after{
+    width:100%;
+}
+
+
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    line-height:1;
+    color:var(--primary);
+    cursor:pointer;
+    transition:.3s;
+    z-index:1001;
+}
+
+.menu-toggle:hover{
+    color:var(--primary);
+}
+
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding-top:140px;
+
+    /* تعديل مسار الخلفية بإضافة طبقة داكنة بنسبة 75% لتوضيح الكلام */
+    background-image: linear-gradient(rgba(11, 18, 32, 0.75), rgba(11, 18, 32, 0.75)), url('datacenter.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* إضافة تأثير البلور (التغبيش) على الخلفية والموقع */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+}
+
+.hero-content{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:80px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-image img{
+
+    width:360px;
+
+    height:360px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:6px solid var(--primary);
+
+    box-shadow:
+
+        0 0 20px rgba(59,130,246,.5),
+
+        0 0 60px rgba(59,130,246,.35),
+
+        0 0 120px rgba(59,130,246,.15);
+
+    transition:.5s;
+
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.05);
+
+}
+
+.hero-text{
+
+    flex:1.4;
+
+}
+
+.hero-intro{
+
+    color:var(--primary);
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+}
+
+.hero-text h1 {
+    font-size: 62px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    font-weight: 800; /* جعل الخط أعرض */
+    letter-spacing: -1px; /* لمسة عصرية بتقليل المسافات */
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5); /* ظل خفيف ليبرز فوق الصورة */
+}
+
+.hero-text h1 span {
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+}
+
+
+.typing{
+
+    color:white;
+
+    font-size:34px;
+
+    margin:15px 0;
+
+}
+
+.hero-role{
+
+    color:#93c5fd;
+
+    font-size:20px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-description {
+    color: #e5e7eb; /* لون أفتح قليلاً من السابق */
+    line-height: 1.8;
+    font-size: 18px;
+    margin-bottom: 35px;
+    max-width: 650px;
+    font-weight: 300; /* خط أنحف ليعطي تباين مع العنوان الضخم */
+}
+
+.hero-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:35px;
+
+}
+
+.hero-tags span{
+
+    padding:10px 18px;
+
+    background:rgba(59,130,246,.12);
+
+    border:1px solid rgba(96,165,250,.35);
+
+    border-radius:30px;
+
+    color:#bfdbfe;
+
+    font-size:14px;
+
+    transition:.35s;
+
+}
+
+.hero-tags span:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:translateY(-4px);
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn {
+    padding: 14px 26px;
+    border-radius: 12px;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    transition: .35s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(59,130,246,.25);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: #2563eb;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); 
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 1px solid var(--primary);
+}
+
+.btn.secondary:hover {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+
+/* ===========================
+   Responsive Hero
+=========================== */
+@media (max-width: 992px) {
+
+    .hero {
+        padding-top: 120px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero-text {
+        order: 1;
+    }
+
+    .hero-image {
+        order: 2;
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .typing {
+        font-size: 28px;
+    }
+
+    .hero-role {
+        font-size: 18px;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .hero-tags {
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+}
+
+
+
+/*=========================
+        Statistics
+=========================*/
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+    margin-top:-40px;
+
+}
+
+.stat-card{
+
+    background: rgba(17, 24, 39, 0.45); /* جعل الخلفية أشف وأكثر تماشياً مع الطابع الزجاجي */
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 20px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    transition: all .4s cubic-bezier(0.4, 0, 0.2, 1); /* حركة انتقال أنعم واحترافية */
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+
+}
+
+.stat-card:hover{
+
+    transform: translateY(-12px); /* الكارت يرتفع بشكل أوضح وأجمل عند وقوف الماوس */
+
+    border-color: var(--primary);
+
+    /* إضافة توهج تقني خفيف باللون الأزرق */
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.25); 
+
+}
+
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 30px rgba(59,130,246,.35);
+
+}
+
+.stat-card i{
+
+    font-size:40px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.stat-card h2{
+
+    font-size:48px;
+
+    margin-bottom:10px;
+
+    color:white;
+
+}
+
+.stat-card p{
+
+    color:#9ca3af;
+
+    font-size:17px;
+
+}
+
+/*=========================
+        About
+=========================*/
+
+.about-container{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:50px;
+
+    align-items:flex-start;
+
+}
+
+.about-text{
+
+    background: rgba(255, 255, 255, 0.07) !important; /* تفتيح الزجاج ليكون واضحاً فوق أي خلفية */
+
+    backdrop-filter: blur(25px) !important;
+
+    -webkit-backdrop-filter: blur(25px) !important;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    /* إضافة حد مضيء أزرق خفيف ليفصل الكارت عن سواد الموقع تماماً */
+    border: 1px solid rgba(59, 130, 246, 0.3) !important; 
+
+    /* إضافة ظل متوهج خفيف حول الكارت */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.1) !important;
+
+}
+
+
+
+.about-text h3{
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+}
+
+.about-text p{
+
+    line-height: 1.9;
+
+    color: #e5e7eb; /* لون نص أفتح وأوضح للقراءة فوق الخلفيات */
+
+    font-size: 17px;
+
+}
+
+.about-info{
+
+    display: grid;
+
+    gap: 20px;
+
+}
+
+.info-card{
+
+    background: rgba(17, 24, 39, 0.5);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    transition: all .35s ease;
+
+}
+
+.info-card:hover{
+
+    transform: translateY(-8px); /* الحفاظ على الحركة الرأسية المفضلة لديك مع تنعيمها */
+
+    border-color: var(--primary);
+
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+
+}
+
+.info-card h4{
+
+    color: var(--primary);
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+}
+
+/* ===========================
+   Projects
+=========================== */
+
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:30px;
+}
+
+.project-card{
+
+    background: rgba(255, 255, 255, 0.03); /* مظهر زجاجي ناعم متناسق مع بقية الموقع */
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: all .4s cubic-bezier(0.4, 0, 0.2, 1); /* حركة انتقال بالغة النعومة */
+
+    display: flex;
+
+    flex-direction: column;
+
+    position: relative;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+
+}
+
+.project-card:hover{
+
+    transform: translateY(-12px) scale(1.02); /* الكارت يرتفع ويكبر قليلاً بشكل تفاعلي */
+
+    border-color: var(--primary);
+
+    /* توهج أزرق سيبراني مميز يبرز الكارت المحرك */
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.25); 
+
+}
+
+.project-icon{
+    width:70px;
+    height:70px;
+    margin:25px auto 5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:18px;
+    background:rgba(59,130,246,.12);
+    border:1px solid rgba(59,130,246,.25);
+}
+
+.project-icon i{
+    font-size:32px;
+    color:var(--primary);
+}
+
+
+.project-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:25px 30px 30px;
+    height:100%;
+}
+
+.project-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.project-header h3{
+    font-size:1.5rem;
+    color:#fff;
+    margin:0;
+}
+
+.project-content p{
+    color:#9ca3af;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.project-tech{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.project-tech span{
+    padding:8px 16px;
+    border-radius:999px;
+    background:rgba(59,130,246,.12);
+    border:1px solid rgba(59,130,246,.25);
+    color:#93c5fd;
+    font-size:.9rem;
+}
+
+.project-buttons{
+    margin-top:auto;
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+/* ===========================
+   Experience
+=========================== */
+
+.experience-container{
+    display:grid;
+    gap:30px;
+}
+
+.experience-card{
+    background:rgba(17,24,39,.65);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    transition:all .35s ease;
+}
+
+.experience-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--primary);
+    box-shadow:0 15px 35px rgba(59,130,246,.20);
+}
+
+
+/* ===========================
+   Skills
+=========================== */
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.skill-category{
+    background:rgba(17,24,39,.65);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    transition:all .35s ease;
+}
+
+.skill-category:hover{
+    transform:translateY(-8px);
+    border-color:var(--primary);
+    box-shadow:0 15px 35px rgba(59,130,246,.20);
+}
+
+
+.skill-category h3{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:25px;
+    color:#fff;
+    font-size:22px;
+}
+
+.skill-category h3 i{
+    color:var(--primary);
+    font-size:24px;
+}
+
+
+.skill-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.skill-tags span{
+    padding:10px 16px;
+    border-radius:25px;
+    background:rgba(59,130,246,.12);
+    border:1px solid rgba(59,130,246,.25);
+    color:#dbeafe;
+    font-size:14px;
+    transition:.3s;
+}
+
+.skill-tags span:hover{
+    background:var(--primary);
+    color:#fff;
+    transform:translateY(-3px);
+}
+
+
+/* ===========================
+   Journey
+=========================== */
+
+.timeline{
+    max-width:900px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.timeline-item{
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+}
+
+.timeline-icon{
+    width:70px;
+    height:70px;
+    min-width:70px;
+    border-radius:50%;
+    background:rgba(59,130,246,.12);
+    border:1px solid rgba(59,130,246,.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+
+.timeline-icon i{
+    font-size:28px;
+    color:var(--primary);
+}
+
+.timeline-content{
+    flex:1;
+    background:rgba(17,24,39,.65);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px;
+    transition:.35s;
+}
+
+.timeline-content:hover{
+    transform:translateX(8px);
+    border-color:var(--primary);
+    box-shadow:0 15px 30px rgba(59,130,246,.20);
+}
+
+
+.timeline-content h3{
+    margin-bottom:12px;
+    color:#fff;
+    font-size:24px;
+}
+
+.timeline-content p{
+    color:#d1d5db;
+    line-height:1.8;
+}
+
+
+/* ===========================
+   Certifications
+=========================== */
+
+.certificates-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.certificate-card{
+    background: rgba(255, 255, 255, 0.03); /* المظهر الزجاجي الموحد والمطوّر للموقع */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all .4s cubic-bezier(0.4, 0, 0.2, 1); /* حركة انتقال بالغة النعومة والاحترافية */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.certificate-card:hover{
+    transform: translateY(-12px) scale(1.02); /* الكارت يرتفع ويكبر بنسبة بسيطة ليعطي عمقاً */
+    border-color: var(--primary);
+    /* توهج أزرق سيبراني مميز يتناسب مع باقي الكروت والمشاريع */
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.25); 
+}
+
+.certificate-card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* خط بسيط يفصل الصورة عن محتوى الكارت */
+    transition: 0.4s;
+}
+
+.certificate-card:hover img{
+    transform: scale(1.03); /* حركة زووم خفيفة جداً داخل الصورة عند وقوف الماوس */
+}
+
+.certificate-content{
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.certificate-content h3{
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+}
+
+.certificate-content p{
+    color: #e5e7eb; /* لون نص أفتح قليلاً ليكون واضحاً في القراءة */
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.certificate-content .btn{
+    margin-top: auto;
+    width: 100%;
+    justify-content: center;
+}
+
+
+/* ==========================
+   Contact Section
+========================== */
+
+.contact {
+    padding: 100px 10%;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.03); /* المظهر الزجاجي الموحد والمطوّر للموقع */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 40px 30px; /* زيادة الطول الرأسي ليكون الكارت متناسقاً ومريحاً */
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* حركة انتقال ناعمة واحترافية */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.contact-card:hover {
+    transform: translateY(-10px); /* الكارت بالكامل يرتفع بشكل مميز وتفاعلي عند وقوف الماوس */
+    border-color: var(--primary);
+    /* التوهج الأزرق الموحد في كل كروت الموقع المتطورة */
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.25); 
+}
+
+.contact-card i {
+    font-size: 2.2rem; /* تكبير الأيقونة قليلاً */
+    color: var(--primary); /* استخدام المتغير الأساسي للموقع */
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.contact-card:hover i {
+    transform: scale(1.1); /* الأيقونة تكبر بنسبة بسيطة جداً عند الـ Hover لتعطي انطباعاً تقنياً حياً */
+}
+
+.contact-card h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.contact-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary); /* استخدام المتغير الفرعي الأفتح ليكون واضحاً */
+    font-weight: 500;
+    text-decoration: none; /* إزالة الخط السفلي التقليدي للحصول على مظهر أكثر عصرية */
+    transition: 0.3s;
+    word-break: break-word;
+    position: relative;
+}
+
+.contact-card a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1.5px;
+    background: var(--primary);
+    transition: 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: var(--primary);
+}
+
+.contact-card a:hover::after {
+    width: 100%; /* ظهور خط سفلي أنيق ومتحرك عند تمرير الماوس فوق الرابط */
+}
+
+
+#backToTop {
+    position: fixed;
+    left: 50%;
+    bottom: 40px;
+    /* دمج الخواص بشكل صحيح للبداية المخفية */
+    transform: translateX(-50%) translateY(20px) scale(0.9);
+
+    width: 65px;
+    height: 65px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(59, 130, 246, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+
+    color: #60a5fa;
+    font-size: 22px; /* تكبير السهم قليلاً */
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* حركة أنعم تتماشى مع باقي عناصر الموقع */
+
+    z-index: 999;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+#backToTop:hover {
+    /* تصحيح الحركة ليرتفع الزر بسلاسة تامة دون التأثير على التمركز الأفقي */
+    transform: translateX(-50%) translateY(-6px) scale(1.08);
+    background: var(--primary); /* استخدام المتغير الأساسي */
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.45);
+}
+
+
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 992px){
+
+    .hero-content{
+        flex-direction:column;
+        text-align:center;
+        gap:50px;
+    }
+
+    .hero-text{
+        order:2;
+    }
+
+    .hero-image{
+        order:1;
+    }
+
+    .hero-tags,
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    /* التعديل الجديد لحل مشكلة التكدس والمساحة الزرقاء */
+    .about-container {
+        grid-template-columns: 1fr !important; /* تحويل القسم لعمود واحد رأسي فوق بعضه */
+        gap: 30px;
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .navbar{
+        overflow:visible;
+        padding:15px 20px;
+    }
+       
+    .logo span{
+        font-size:18px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+        .nav-links{
+        position:absolute;
+        top:85px;
+        left:50%;
+        width:95%;
+        transform:translateX(-50%) translateY(-20px);
+        /* جعل الخلفية أغمق لمنع تداخل الكلام عند النزول */
+        background: rgba(11, 18, 32, 0.98); 
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius:20px;
+        padding:25px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+        opacity:0;
+        visibility:hidden;
+        transition:.35s;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.active{
+        opacity:1;
+        visibility:visible;
+        transform:translateX(-50%) translateY(0);
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero-image img{
+        width:240px;
+        height:240px;
+    }
+
+    .hero-text h1{
+        font-size:34px; /* تصغير الخط ليكون متناسقاً ومريحاً للعين على شاشة الموبايل */
+        letter-spacing: 0px;
+    }
+
+}
+
+@media (max-width:576px){
+
+    section{
+        padding:70px 20px;
+    }
+
+    .hero-text h1{
+        font-size:36px;
+    }
+
+    .typing{
+        font-size:24px;
+    }
+
+    .hero-description{
+        font-size:15px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+        max-width:280px;
+        justify-content:center;
+    }
+
+}
+
+/* ===========================
+   Scroll Animations
+=========================== */
+.reveal{
+    opacity:0;
+    transform:translateY(40px); /* تقليل المسافة لتكون الحركة أنعم */
+    transition:all .8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0); /* تصحيح القيمة ليعود القسم لمكانه الطبيعي تماماً دون قفز */
+}
+
